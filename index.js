@@ -1,4 +1,4 @@
-fetch('/genzcfc/data/causes.json')
+fetch('/data/causes.json')
   .then(res => res.json())
   .then(causeList => {
     // Randomize order of causes.
