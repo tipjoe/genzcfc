@@ -5,8 +5,8 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
+  <title>Fort Carson Cares</title>
+  <meta name="description" content="Fort Carson Combined Federal Campaign Giving">
   <meta name="author" content="">
 
   <!-- Mobile Specific Metas
@@ -15,10 +15,12 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.googleapis.com/css?family=Arial:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/output.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
@@ -27,18 +29,31 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body>
+<body class="flex flex-col h-screen justify-between bg-gray-300">
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
+  <script type="text/javascript" src="index.js"></script>
+
+  <header class="!px-8 !py-6  container" style="color: #01015b;">
+    <img src="images/cfc-logo.jpeg" class="m-auto" style="width: 100px; margin-bottom: 12px;" />
+    <h2 class="m-0 uppercase" style="font-size: 3.5rem; line-height: 4.7rem;">Let's show that Fort Carson Cares</h2>
+    Start your journey of giving today and choose a cause area to support.
+  </header>
+
+  <main class="mb-auto container w-full rounded-t-3xl bg-white" style="padding: 0 16px;">
+    <h4 style="margin: 16px 0 12px 0;">Featured Causes</h4>
+    <div id="causes" class="flex flex-wrap justify-between"></div>
+    <button id="cause-list" class="w-full md:w-32 bg-blue-950 text-white mb-6">View All Causes</button>
+  </main>
+
+  <footer class="!p-8 flex flex-col justify-center content-center container">
+    <div class="h-full text-center">
+      <h5 class="m-0">Fort Carson</h5>
     </div>
-  </div>
+    <div>
+      <img src="images/cfc-logo.jpeg" class="m-auto" style="width: 100px;" />
+    </div>
+
+  </footer>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
