@@ -1,7 +1,6 @@
 // Grab causes from localStorage.
 let causeList = localStorage.getItem("causeList");
 if (!causeList) {
-  console.log("causes - getting causes.")
   // Load causes into localStorage.
   fetch('../data/causes.json')
     .then(res => res.json())

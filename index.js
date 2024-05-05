@@ -1,8 +1,6 @@
 // Grab causes from localStorage.
 let causeList = localStorage.getItem("causeList");
 if (!causeList) {
-  console.log("home - getting causes.")
-  // Load causes into localStorage.
   fetch('data/causes.json')
     .then(res => res.json())
     .then(causes => {
@@ -37,7 +35,7 @@ function loadCauses() {
     });
     // Add cause image.
     const img = new Image()
-    img.src = "/images/causes/" + key + ".webp";
+    img.src = "images/causes/" + key + ".webp";
     img.className = "drop-shadow-md"
     cause.appendChild(img);
 
