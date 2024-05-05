@@ -51,7 +51,7 @@ function enableDonate(event) {
   const donate = document.getElementById("donate");
   donate.disabled = false;
   donate.classList.add("bg-blue-950");
-  donate.classList.add("text-white");
+  donate.classList.add("!text-white");
   event.target.classList.add("bg-blue-950");
   event.target.classList.add("!text-white");
 }
