@@ -41,11 +41,11 @@
     <div id="cause" style="padding-top: 12px;" class=""></div>
 
     <h5 style="margin: 12px 0; color: #01015b;">Choose a donation amount:</h5>
-    <div class="flex justify-between">
-      <button onclick="enableDonate()">$25</button>
-      <button onclick="enableDonate()">$50</button>
-      <button onclick="enableDonate()">$75</button>
-      <button onclick="enableDonate()">$100</button>
+    <div class="flex justify-between md:justify-start">
+      <button class="md:mr-8" onclick="enableDonate()">$25</button>
+      <button class="md:mr-8" onclick="enableDonate()">$50</button>
+      <button class="md:mr-8" onclick="enableDonate()">$75</button>
+      <button class="md:mr-8" onclick="enableDonate()">$100</button>
     </div>
     <div class="!w-full space-y-3">
       <div>
@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-    <button id="donate" onclick="alert('Thanks for donating!')" disabled style="text-transform: capitalize;" class="w-full md:w-32 my-6">Donate</button>
+    <button id="donate" onclick="alert('Thanks for donating!')" disabled style="text-transform: capitalize;" class="w-full my-6">Donate</button>
   </main>
 
   <footer class="!p-8 flex flex-col justify-center content-center container">

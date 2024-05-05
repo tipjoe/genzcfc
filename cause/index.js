@@ -50,5 +50,5 @@ function loadCause() {
 function enableDonate() {
   const donate = document.getElementById("donate");
   donate.disabled = false;
-  donate.classList = "bg-blue-950 text-white w-full md:w-32 my-6";
+  donate.classList = "bg-blue-950 text-white w-full my-6";
 }

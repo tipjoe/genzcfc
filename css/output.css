@@ -2647,8 +2647,16 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mr-8 {
+    margin-right: 2rem;
+  }
+
   .md\:w-32 {
     width: 8rem;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 }
 
