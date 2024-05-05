@@ -29,25 +29,34 @@
   <link rel="icon" type="image/png" href="../images/favicon.png">
 
 </head>
-<body class="flex flex-col h-screen justify-between">
+<body class="flex flex-col h-screen justify-between" style="background-color: #D7D7D7;" >
 
-  <script type="text/javascript" src="./index.js"></script>
-
-  <header class="!px-8 !py-6 container flex justify-between content-center" style="color: #01015b; border-bottom: 1px solid black;">
-    <a style="color: #01015b;text-transform: uppercase; margin: auto 0;" href="/causes">< &nbsp; Choose your impact</a>
-    <img src="../images/cfc-logo.jpeg" class="m-auto" style="width: 100px;" />
+  <header class="!px-8 flex justify-between !w-full" style="color: #01015b; border-bottom: 1px solid black;">
+    <a style="color: #01015b;text-transform: uppercase; margin: auto 0;font-size: 60px;" href="../causes">&lsaquo;</a> 
+    <div style="text-transform: uppercase; margin: auto 0; padding-top: 8px; font-weight: bold;">Choose your impact</div>
+    <img src="../images/cfc-logo.jpeg" class="my-auto" style="width: 100px;" />
   </header>
 
-  <main class="mb-auto container w-full rounded-t-3xl bg-white" style="padding: 0 16px; margin-top: 16px; height: 100vh;">
+  <main class="mb-auto container w-full" style="padding: 0 16px; margin-top: 16px; height: 100vh;">
     <div id="cause" style="padding-top: 12px;" class=""></div>
 
     <h5 style="margin: 12px 0; color: #01015b;">Choose a donation amount:</h5>
     <div class="flex justify-between">
-      <button>$25</button>
-      <button>$50</button>
-      <button>$75</button>
-      <button>$100</button>
+      <button onclick="enableDonate()">$25</button>
+      <button onclick="enableDonate()">$50</button>
+      <button onclick="enableDonate()">$75</button>
+      <button onclick="enableDonate()">$100</button>
     </div>
+    <div class="!w-full space-y-3">
+      <div>
+        Or enter amount:<br />
+        <div class="flex rounded-lg shadow-sm">
+          <span class="px-4 inline-flex items-center min-w-fit rounded-s-md border border-e-0 border-gray-200 bg-gray-50 text-gray-500 dark:bg-neutral-700 dark:border-neutral-700 dark:text-neutral-400">$</span>
+          <input type="number" class="py-3 px-4 pe-11 block !w-full border-gray-200 shadow-sm !rounded-l-none !rounded-r-lg focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 !mb-0">
+        </div>
+      </div>
+    </div>
+    <button id="donate" onclick="alert('Thanks for donating!')" disabled style="text-transform: capitalize;" class="w-full md:w-32 my-6">Donate</button>
   </main>
 
   <footer class="!p-8 flex flex-col justify-center content-center container">
@@ -60,6 +69,7 @@
 
   </footer>
 
+  <script type="text/javascript" src="./index.js"></script>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
