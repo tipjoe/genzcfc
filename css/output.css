@@ -2164,6 +2164,11 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
+.\!text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
 }
@@ -2649,10 +2654,6 @@ video {
 @media (min-width: 768px) {
   .md\:mr-8 {
     margin-right: 2rem;
-  }
-
-  .md\:w-32 {
-    width: 8rem;
   }
 
   .md\:justify-start {
