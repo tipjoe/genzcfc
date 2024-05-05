@@ -23,9 +23,13 @@ function loadCause() {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('c');
     if (key == myParam) {
+      // If user is on a large screen, use the bigger jpg. Otherwise webp. 
+      const width = window.innerWidth; 
+      const path = width > 600 ? "../images/causes/jpg/" : "../images/causes/";
+      const ext = width > 600 ? ".jpg" : ".webp";
       // Add cause image.
       const img = new Image()
-      img.src = "../images/causes/" + key + ".webp";
+      img.src = path + key + ext;
       img.className = "drop-shadow-md rounded-lg w-full"
       cause.appendChild(img);
 
