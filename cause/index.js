@@ -48,5 +48,7 @@ function loadCause() {
 
 // Enable/disable button when valid amount is chosen.
 function enableDonate() {
-  document.getElementById("donate").disabled = false;
+  const donate = document.getElementById("donate");
+  donate.disabled = false;
+  donate.classList = "bg-blue-950 text-white w-full md:w-32 my-6";
 }
