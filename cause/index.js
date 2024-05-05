@@ -1,4 +1,4 @@
-fetch('/data/causes.json')
+fetch('/genzcfc/data/causes.json')
   .then(res => res.json())
   .then(causeList => {
     // Make a block for each cause.
