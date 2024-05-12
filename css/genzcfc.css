@@ -1,0 +1,84 @@
+
+header {
+  color: #01015b; 
+  border-bottom: 1px solid #01015b;
+}
+
+header.home {
+  background-image: url(../images/flag.png);
+  background-size: cover;
+  border-bottom: none;
+}
+
+header.home h2 {
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+header.home .logo {
+  margin: 0 auto 24px;
+}
+
+.logo {
+  width: 100px; 
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.font-16 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font-20 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
+.font-blue {
+  color: #003479;
+}
+
+.border-blue {
+  border-color: #003479;
+}
+
+.font-black {
+  color: #585858;
+  font-weight: 300;
+}
+
+.bg-blue {
+  background-color: #003479;
+  color: white;
+  font-weight: 300;
+}
+
+.amount-selected {
+  background-color: #e0e7ef;
+  color: #003479 !important;
+  border-color: #003479 !important;
+  border-width: 2px;
+}
+
+.bg-blue:focus {
+  background-color: #003479;
+  color: white;
+}
+
+
+button {
+  padding: 0 24px;
+}
+
+button.disabled {
+  background-color: #e4e4e4;
+  color: gray;
+}

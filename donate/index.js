@@ -1,9 +1,5 @@
 // Grab causes from localStorage.
 let causeList = localStorage.getItem("causeList");
-let donationAmount = 0;
-let donationUrl = "../donate?c=";
-let donationEventListener; 
-
 if (!causeList) {
   // Load causes into localStorage.
   fetch('../data/causes.json')
@@ -21,39 +17,29 @@ if (!causeList) {
 function loadCause() {
   // Make a detail block for this cause.
   const cause = document.getElementById("cause");
+  const backLink = document.getElementById("back-link");
 
   // Titles, images, descriptions. 
   for (const [key, value] of Object.entries(causeList)) {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('c');
-    donationUrl += myParam;
+    const amountParam = urlParams.get('a');
+
+    backLink.href = "../cause?c=" + myParam;
 
     if (key == myParam) {
-      // If user is on a large screen, use the bigger jpg. Otherwise webp. 
-      const width = window.innerWidth; 
-      const path = width > 600 ? "../images/causes/jpg/" : "../images/causes/";
-      const ext = width > 600 ? ".jpg" : ".webp";
-      // Add cause image.
-      const img = new Image()
-      img.src = path + key + ext;
-      img.className = "drop-shadow-md rounded-lg w-full"
-      cause.appendChild(img);
+      // Add cause donation description.
+      const desc = document.getElementById("desc");
+      desc.innerText = "Your donation will be distributed to all CFC-approved charities dedicated to " + value[0] + ".";
 
-      // Add cause title.
-      const title = document.createElement("h5");
-      title.innerText = value[0];
-      title.className = "font-blue font-20";
-      title.style = "margin: 12px 0;";
-      cause.appendChild(title);
+      // Add donation summary.
+      const summaryLeft = document.getElementById("summary-left");
+      summaryLeft.innerHTML = value[0];
 
-      // Add cause description.
-      const desc = document.createElement("div");
-      desc.innerText = value[1];
-      desc.className = "font-black";
-      cause.appendChild(desc);
+      const summaryRight = document.getElementById("summary-right");
+      summaryRight.innerHTML = amountParam;
 
-      donationUrl = "../donate/?c=" + key;
-      // Leave as soon as we find cause.
+
       return;
     }
   }
@@ -76,15 +62,6 @@ function enableDonate(event) {
   });
 
   donationAmount = event.target.innerHTML;
-  const donationLink = donationUrl + "&a=" + donationAmount;
-
-  // Remove previous donate handler. 
-  donationEventListener = function() {
-    window.location = donationLink;
-  };
-
-  donate.addEventListener("click", donationEventListener);
-  
   event.target.classList.add("amount-selected");
 
 }

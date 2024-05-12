@@ -24,7 +24,7 @@ function loadCauses() {
     const cause = document.createElement("li");
     cause.id = `${key}`;
     cause.style = "padding: 8px 4px; margin: 0 !important; list-style: none;";
-    cause.innerHTML = "<a style='color: #01015b;' href='../cause?c=" + key + "'>" + value[0] + "</a>";
+    cause.innerHTML = "<a class='font-black' href='../cause?c=" + key + "'>" + value[0] + "</a>";
 
     // Add new cause div to the main causes container list.
     causes.appendChild(cause);

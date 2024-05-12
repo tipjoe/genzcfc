@@ -29,6 +29,7 @@ function loadCauses() {
     // Create container div for each cause. 
     const cause = document.createElement("div");
     cause.id = `${key}`;
+    cause.className = "font-black";
     cause.style = "max-width: 47.5%; margin-bottom: 16px; cursor: pointer;";
     cause.addEventListener('click', function() {
       window.location = "cause?c=" + key;

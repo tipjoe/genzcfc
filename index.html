@@ -15,32 +15,34 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
-  <link href="//fonts.googleapis.com/css?family=Arial:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=OpenSans:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/output.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/genzcfc.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body class="flex flex-col h-screen justify-between" style="background-color: #D7D7D7; height: 100%;" >
+<body class="flex flex-col h-screen justify-between" style="height: 100%;" >
 
-  <header class="!px-8 !py-6  container" style="color: #01015b;">
-    <img src="images/cfc-logo.jpeg" class="m-auto" style="width: 100px; margin-bottom: 12px;" />
-    <h2 class="m-0 uppercase" style="font-size: 3rem; line-height: 4rem;">Let's show that Fort Carson Cares</h2>
-    Start your journey of giving today and choose a cause area to support.
+  <header class="!px-8 !py-6 container home font-blue">
+    <img src="images/cfc-logo-trans-150.png" class="logo m-auto" />
+    <h2 class="m-0 uppercase font-blue">Let's show that Fort Carson Cares</h2>
+    <p class="font-16" style="margin: 12px 0 20px;">
+      Start your journey of giving today and choose a cause area to support.
+    </p>
   </header>
 
-  <main class="mb-auto container w-full rounded-t-3xl bg-white" style="padding: 0 16px;">
-    <h4 style="margin: 16px 0 12px 0;">Featured Causes</h4>
+  <main class="mb-auto container w-full rounded-t-3xl bg-white" style="padding: 0 16px; top: -16px;">
+    <h4 class="font-black" style="margin: 16px 0 12px 0;">Featured Causes</h4>
     <div id="causes" class="flex flex-wrap justify-between"></div>
-    <button id="cause-list" class="w-full bg-blue-950 text-white mb-6">View All Causes</button>
+    <button id="cause-list" class="mb-6 w-full bg-blue font-16" style="text-transform: capitalize; height: auto;">View All Causes</button>
   </main>
 
   <script type="text/javascript" src="./index.js"></script>

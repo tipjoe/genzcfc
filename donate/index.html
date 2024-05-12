@@ -31,34 +31,27 @@
 </head>
 <body class="flex flex-col h-screen justify-between" style="height: 100%;" >
   <header class="!px-8 flex justify-between items-end pt-2 pb-4">
-    <a href="../causes"><img src="../images/left-nav.png" style="height: 22px;" /></a> 
-    <div class="font-16" style="text-transform: uppercase; font-weight: bold;">Choose your impact</div>
+    <a id="back-link"><img src="../images/left-nav.png" style="height: 22px;" /></a> 
+    <div class="font-16" style="text-transform: uppercase; font-weight: bold;">Donate today</div>
     <a href="../"><img src="../images/cfc-logo-trans-150.png" class="logo" /></a>
   </header>
 
   <main class="container w-full" style="padding: 0 16px; margin-top: 16px; height: 100vh;">
-    <div id="cause" style="padding-top: 12px;" class=""></div>
-
-    <h5 class="font-blue font-20" style="margin: 12px 0;">Choose a donation amount:</h5>
-    <div class="flex justify-between md:justify-start">
-      <button class="amount font-16 md:mr-8" onclick="enableDonate(event);">$25</button>
-      <button class="amount font-16 md:mr-8" onclick="enableDonate(event);">$50</button>
-      <button class="amount font-16 md:mr-8" onclick="enableDonate(event);">$75</button>
-      <button class="amount font-16 md:mr-8" onclick="enableDonate(event);">$100</button>
-    </div>
-    <div class="!w-full space-y-3">
-      <div>
-        Or enter amount:<br />
-        <div class="flex rounded-lg shadow-sm">
-          <span class="px-4 inline-flex items-center min-w-fit rounded-s-md border border-e-0 border-gray-200 bg-gray-50 text-gray-500 dark:bg-neutral-700 dark:border-neutral-700 dark:text-neutral-400">$</span>
-          <input type="number" class="py-3 px-4 pe-11 block !w-full border-gray-200 shadow-sm !rounded-l-none !rounded-r-lg focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 !mb-0">
-        </div>
+    <div id="cause">
+   
+      <p id="desc" class="font-black m-0" style="margin-bottom: 12px;"></p>
+      
+      <div id="summary" class="flex justify-between items-center font-blue border-blue rounded-lg" style="padding: 24px; border: 1px solid;">
+        <div id="summary-left" class="w-1/2"></div>
+        <div id="summary-right" class="w-1/2 text-right"></div>
       </div>
     </div>
-    <div class="flex">
 
-      <button id="donate" disabled style="text-transform: capitalize; margin-bottom: 36px;" class="w-1/2 my-6 mr-2 disabled">Donate</button>
-      <button id="causes" style="text-transform: capitalize; margin-bottom: 36px;" onclick="window.location='../causes'" class="w-1/2 my-6 ml-2 font-blue border-blue">View All Causes</button>
+    <h5 class="font-blue font-20" style="margin: 12px 0;">Select payment method</h5>
+    <div class="flex flex-col">
+      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">Venmo</button>
+      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">PayPal</button>
+      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">Debit or Credit Card</button>
     </div>
   </main>
 
