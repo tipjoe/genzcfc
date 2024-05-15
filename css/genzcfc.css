@@ -82,3 +82,23 @@ button.disabled {
   background-color: #e4e4e4;
   color: gray;
 }
+
+#apple-pay {
+  background: url(../images/applepay-overlay.png);
+  background-size: contain;
+  background-repeat: round;
+  z-index: 20;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+#apple-thanks{
+  background: url(../images/apple-thanks.jpg);
+  background-size: contain;
+  background-repeat: round;
+  z-index: 1;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}

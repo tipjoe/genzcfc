@@ -45,23 +45,19 @@ function loadCause() {
   }
 }
 
-// Enable/disable button when valid amount is chosen.
-function enableDonate(event) {
-  const donate = document.getElementById("donate");
-  donate.disabled = false;
+function showApplePay(e) {
+  const applePay = document.getElementById("apple-pay");
+  applePay.classList.remove('hidden');
 
+  const onClick = (e) => {
+    if (e.target.id !== "thanks") {
+      applePay.classList.add('hidden');
+      applePay.removeEventListener('click', onClick);
+    }
+  }
+  applePay.addEventListener('click', onClick);
+}
 
-  // enabled donate button
-  donate.classList.add("bg-blue-950", "!text-white");
-  donate.classList.remove("disabled");
-
-  // highlight selected (and unhighlight others);
-  let amtButtons = document.getElementsByClassName("amount");
-  Array.from(amtButtons).forEach(function (b) {
-    b.classList.remove("amount-selected");
-  });
-
-  donationAmount = event.target.innerHTML;
-  event.target.classList.add("amount-selected");
-
+function toThanksApple() {
+  window.location = "../thanks";
 }
