@@ -2,7 +2,6 @@
 let causeList = localStorage.getItem("causeList");
 let donationAmount = 0;
 let donationUrl = "../donate?c=";
-let donationEventListener; 
 
 if (!causeList) {
   // Load causes into localStorage.
@@ -53,38 +52,74 @@ function loadCause() {
       cause.appendChild(desc);
 
       donationUrl = "../donate/?c=" + key;
+      console.log('donate add event listener')
+      donate.addEventListener("click", function() {
+        console.log('donate event')
+        window.location = donationUrl;
+      });
+
       // Leave as soon as we find cause.
       return;
     }
   }
 }
 
-// Enable/disable button when valid amount is chosen.
+// Enable/disable button when valid amount is clicked (buttons) or entered 
+// (text number input).
 function enableDonate(event) {
+
   const donate = document.getElementById("donate");
-  donate.disabled = false;
+  let amtButtons;
+  let donateTextDesc = document.getElementById("donate-text-desc");
+  let donateTextListener;
 
+  if (event.target.type !== 'number') {
+    // It's an amount button.
+    donate.disabled = false;
+    donate.classList.remove("disabled");
+    donate.classList.add("bg-blue-950", "!text-white");
+    // Set donation amount.
+    donationAmount = event.target.innerHTML;
+    localStorage.setItem('donationAmount', donationAmount);
+    // highlight selected (and unhighlight others);
+    amtButtons = document.getElementsByClassName("amount");
+    Array.from(amtButtons).forEach(function (b) {
+      b.classList.remove("amount-selected");
+    });
+    // Now add it to the selected one. 
+    event.target.classList.add("amount-selected");
 
-  // enabled donate button
-  donate.classList.add("bg-blue-950", "!text-white");
-  donate.classList.remove("disabled");
-
-  // highlight selected (and unhighlight others);
-  let amtButtons = document.getElementsByClassName("amount");
-  Array.from(amtButtons).forEach(function (b) {
-    b.classList.remove("amount-selected");
-  });
-
-  donationAmount = event.target.innerHTML;
-  const donationLink = donationUrl + "&a=" + donationAmount;
-
-  // Remove previous donate handler. 
-  donationEventListener = function() {
-    window.location = donationLink;
-  };
-
-  donate.addEventListener("click", donationEventListener);
-  
-  event.target.classList.add("amount-selected");
-
+    // Clear out text if user clicks button after entering.
+    const dt = document.getElementById("donate-text")
+    dt.value = "";
+    donateTextDesc.classList.add("hidden");
+    if (donateTextListener) {
+      dt.removeEventListener("input", donateTextListener);
+    }
+    
+  } else {
+    // It's the text box. Don't enable Donate button until there's a valid amt.
+    donate.disabled = true;
+    donate.classList.add("disabled");
+    donate.classList.remove("bg-blue-950", "!text-white");
+    donateTextListener = event.target.addEventListener("input", function(e) {
+      if (e.target.value && e.target.value >= 5) {
+        donate.disabled = false;
+        donate.classList.remove("disabled");
+        donate.classList.add("bg-blue-950", "!text-white");
+        donateTextDesc.classList.add("hidden")
+        localStorage.setItem('donationAmount', "$" + e.target.value);
+      } else {
+        donate.disabled = true;
+        donate.classList.add("disabled");
+        donate.classList.remove("bg-blue-950", "!text-white");
+        donateTextDesc.classList.remove("hidden")
+      }
+    });
+    // Unhighlight all amount buttons. 
+    amtButtons = document.getElementsByClassName("amount");
+    Array.from(amtButtons).forEach(function (b) {
+      b.classList.remove("amount-selected");
+    });
+  }
 }

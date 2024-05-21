@@ -37,7 +37,7 @@
         <div style="margin-left: 8px;">Donation Processed</div>
       </div>
       <div style="margin: 12px 0;">
-        We've successfully processed your $25.00 donation, and a receipt has been emailed to you at <b>rigoel@icloud.com</b>.
+        We've successfully processed your <span id="amount"></span> donation, and a receipt has been emailed to you at <b>rigoel@icloud.com</b>.
       </div>
       <button class="mb-6 w-full bg-blue font-16" style="text-transform: capitalize; height: auto;" onclick="location='../'">Go to Homepage</button>
       <div style="text-align: center;"">
@@ -47,5 +47,9 @@
   </div>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script>
+    const amount = localStorage.getItem('donationAmount');
+    document.getElementById("amount").innerHTML = amount;
+  </script>
 </body>
 </html>

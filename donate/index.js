@@ -23,7 +23,7 @@ function loadCause() {
   for (const [key, value] of Object.entries(causeList)) {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('c');
-    const amountParam = urlParams.get('a');
+    const amount = localStorage.getItem("donationAmount");
 
     backLink.href = "../cause?c=" + myParam;
 
@@ -37,7 +37,7 @@ function loadCause() {
       summaryLeft.innerHTML = value[0];
 
       const summaryRight = document.getElementById("summary-right");
-      summaryRight.innerHTML = amountParam;
+      summaryRight.innerHTML = amount;
 
 
       return;
@@ -47,7 +47,9 @@ function loadCause() {
 
 function showApplePay(e) {
   const applePay = document.getElementById("apple-pay");
+  const amount = localStorage.getItem("donationAmount");
   applePay.classList.remove('hidden');
+  document.getElementById("apple-amount").innerHTML = amount;
 
   const onClick = (e) => {
     if (e.target.id !== "thanks") {
@@ -58,6 +60,17 @@ function showApplePay(e) {
   applePay.addEventListener('click', onClick);
 }
 
-function toThanksApple() {
-  window.location = "../thanks";
+function showCreditPay(e) {
+  const creditPay = document.getElementById("credit-pay");
+  const amount = localStorage.getItem("donationAmount");
+  creditPay.classList.remove('hidden');
+  document.getElementById("credit-amount").innerHTML = amount;
+
+  const onClick = (e) => {
+    if (e.target.id !== "thanks") {
+      creditPay.classList.add('hidden');
+      creditPay.removeEventListener('click', onClick);
+    }
+  }
+  creditPay.addEventListener('click', onClick);
 }

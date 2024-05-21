@@ -30,10 +30,24 @@
 
 </head>
 <body class="flex flex-col h-screen justify-between" style="height: 100%;" >
+  <!-- Hidden payment divs -->
   <div id="apple-pay" class="hidden text-center" style="padding-top: 12px;">
     <a id="thanks" href="../thanks" style="color: lightblue;">Continue to Thanks Page</a>
+    <div id="apple-amount" style="font-size: 21px;
+    bottom: 112px;
+    left: 16px;
+    position: absolute;"></div>
     <div style="color: gray; width: 100%; padding: 0 40px; font-size: .75em;">Or tap/click anywhere else to return to payments page.</div>
   </div>
+  <div id="credit-pay" class="hidden text-center" style="padding-top: 12px;">
+    <div style="position: absolute; bottom: 20px; left: 20px;">
+      <a id="thanks" href="../thanks" style="color: navyblue;">Continue to Thanks Page</a>
+      <div id="credit-amount" class="hidden"></div>
+      <div style="color: darkgray; width: 100%; padding: 0 40px; font-size: .75em;">Or tap/click anywhere else to return to payments page.</div>
+    </div>
+  </div>
+  <!-- End hidden payment divs -->
+
   <header class="!px-8 flex justify-between items-end pt-2 pb-4">
     <a id="back-link"><img src="../images/left-nav.png" style="height: 22px;" /></a> 
     <div class="font-16" style="text-transform: uppercase; font-weight: bold;">Donate today</div>
@@ -54,9 +68,9 @@
     <h5 class="font-blue font-20" style="margin: 12px 0;">Select payment method</h5>
     <div class="flex flex-col">
       <button class="w-full bg-blue font-16 capitalize" onclick="showApplePay(event)">ApplePay</button>
-      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">Venmo</button>
-      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">PayPal</button>
-      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this is a demo)')">Debit or Credit Card</button>
+      <button class="w-full bg-blue font-16 capitalize" onclick="showCreditPay(event)">Debit or Credit Card</button>
+      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this option not included in demo)')">Venmo</button>
+      <button class="w-full bg-blue font-16 capitalize" onclick="alert('Thank you for your donation! (this option not included in demo)')">PayPal</button>
     </div>
   </main>
 

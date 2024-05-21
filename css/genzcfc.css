@@ -93,11 +93,22 @@ button.disabled {
   height: 100vh;
 }
 
+/* credit-pay thanks is the same. */
 #apple-thanks{
   background: url(../images/apple-thanks.jpg);
   background-size: contain;
   background-repeat: round;
   z-index: 1;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+#credit-pay {
+  background: url(../images/creditpay-overlay.png);
+  background-size: contain;
+  background-repeat: round;
+  z-index: 20;
   position: absolute;
   width: 100vw;
   height: 100vh;
